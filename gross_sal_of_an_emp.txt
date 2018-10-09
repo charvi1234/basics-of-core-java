@@ -1,0 +1,31 @@
+/*
+Write a program to calculate the gross salary of an employee. 
+Basic salary will be provided as input and HRA is 10% of basic salary and DA is 20% of the basic salary.
+Gross Salary = Basic Salary + HRA + DA
+Input
+Each test case will contains a single value n (basic salary) where n >=100.
+
+Output
+For each input case, calculate and print the gross salary.
+Sample Input
+5000
+
+Sample Output
+6500
+*/
+import java.util.Scanner;
+
+class Main
+{
+  public static void main(String[] args)
+  {
+    double hra,da,gross;
+    Scanner scan = new Scanner(System.in);
+    double basic=scan.nextInt();
+    hra=0.1*basic;
+    da=0.2*basic;
+    gross=basic+hra+da;
+    int x=(int)gross;
+    System.out.println(x);
+  }
+}
