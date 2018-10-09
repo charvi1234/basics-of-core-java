@@ -1,0 +1,27 @@
+/*
+Sample Input
+10 20 30 40 50
+
+Sample Output
+150 30
+*/
+import java.util.Scanner;
+
+class Main
+{
+  public static void main(String[] args)
+  {
+   Scanner scan = new Scanner(System.in);
+   int i;
+   int total=0;
+   int arr[]=new int[10]; 
+    for(i=0;i<5;i++)
+    {
+      arr[i]=scan.nextInt();
+      total=total+arr[i];
+    }
+    int per=total/5;
+    System.out.print(total+" ");
+    System.out.println(per);
+  }
+}
