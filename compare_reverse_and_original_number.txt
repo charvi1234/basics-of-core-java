@@ -1,0 +1,46 @@
+/*
+Sample Input
+6
+1234
+456
+12
+1
+0045
+0
+
+Sample Output
+Not Equal
+Not Equal
+Not Equal
+Equal
+Not Equal
+Equal
+*/
+import java.util.Scanner;
+// Other imports go here// Do NOT change the class name
+class Main
+{
+    public static void main(String[] args)
+    {
+      Scanner scan = new Scanner(System.in);
+      int a = scan.nextInt();
+      while(a!=0)
+      {
+        int b = scan.nextInt();
+        int z = 0;
+        int d=0,sum=0;
+        z=b;
+        while(z != 0)
+        {
+          d = z%10;
+          sum = sum*10+d;
+          z = z/10;
+        }
+        if(sum == b)
+          System.out.println("Equal");
+        else
+          System.out.println("Not Equal");
+        a--;
+      }
+    }
+}
