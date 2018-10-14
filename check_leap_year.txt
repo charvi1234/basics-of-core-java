@@ -1,0 +1,33 @@
+import java.util.Scanner;
+/*
+Sample Input
+2017
+
+Sample Output
+Not a Leap Year
+*/
+// Other imports go here// Do NOT change the class name
+class Main
+{
+    public static void main(String[] args)
+    {
+      Scanner scan = new Scanner(System.in);
+      int year = scan.nextInt();
+      if(year%4==0)
+      {
+        if(year%100==0)
+        {
+          if(year%400==0)
+          {
+           System.out.println("Leap Year"); 
+          }
+          else
+            System.out.println("Not a Leap Year");
+        }
+        else
+        System.out.println("Leap Year");
+      }
+      else
+        System.out.println("Not a Leap Year");
+    }
+}
