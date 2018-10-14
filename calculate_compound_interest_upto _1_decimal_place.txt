@@ -1,0 +1,30 @@
+/*
+Sample Input
+2
+1000 5 2
+1000 10 1
+
+Sample output
+1102.5
+1100.0
+*/
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main{
+    public static void main(String[] args)
+    {
+      Scanner scan = new Scanner(System.in);
+      int n = scan.nextInt();
+      while(n!=0)
+      {
+      double p = scan.nextDouble();
+      double r = scan.nextDouble();
+      double t = scan.nextDouble();
+      double amount;
+      amount=(float)p*Math.pow((1+(0.01*r)),t);
+      System.out.printf("%.1f",amount);
+      n--;
+      }
+    }
+}
