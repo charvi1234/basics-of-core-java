@@ -1,3 +1,4 @@
+java-conditional and loops
 import java.util.Scanner;
 /*
 Sample Input
