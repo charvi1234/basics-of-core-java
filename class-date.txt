@@ -1,0 +1,82 @@
+/*
+Write a class named Date that remembers information about a month and day. Ignore leap years and don't store the year in your object. 
+You must include the following public methods:
+
+Member-name      Description
+Date(int m, int d)       constructs a new date representing the given month and day   
+daysInMonth()    returns the number of days in the month stored by your date object   
+getDay()         returns the day   
+getMonth()       returns the month   
+nextDay()        advances the Date to the next day, wrapping to the next month and/or year if necessary   
+toString()       returns a string representation e.g. If date is 27 June then return "6/27"  
+absoluteDay()    return the absolute day of a particular date e.g. January 1 is 1, February 1 is 32, March 1 is 60 and December 31 is 365.
+*/
+
+import java.util.Scanner;
+class Date
+{
+  int description;
+  int month;
+  int day;
+  int arr[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+  public Date(int m,int d)
+  {
+    day=d;
+    month=m;
+  }
+  public int daysInMonth()
+  {
+    if(month==2)
+      return 28;
+    else if(month==1||month==3||month==5||month==7||month==8||month==10||month==12)
+      return 31;
+    else
+      return 30;
+  }
+  public int getDay()
+  {
+    return day;
+  }
+  public int getMonth()
+  {
+    return month;
+  }
+  public void nextDay()
+  {
+    if(month<=12)
+    {
+      if(day<30)
+      this.day=day+1;
+      else if((day==31)&&(month==1||month==3||month==5||month==7||month==8||month==10||month==12))
+      {
+        if(month==12&&day==31)
+        {
+        this.month = 1;  
+        this.day = 1;
+        }
+      }
+      else if((day==30)&&(month==2||month==4||month==6||month==9||month==11))
+      {
+        this.day = 1;
+      }
+      else
+        this.day=day+1;
+    }
+  }
+  public String toString()
+  {
+    String str = new String();
+    str = month+"/"+day;    
+    return str;
+  }
+  public int absoluteDay()
+  {
+    int i,sum=0;
+    for(i=0;i<month;i++)
+    {
+      sum=arr[i]+sum;
+    }
+    sum=sum+day;
+    return sum;
+  }
+}
