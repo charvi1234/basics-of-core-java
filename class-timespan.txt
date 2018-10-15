@@ -1,0 +1,49 @@
+/*
+Define a class named TimeSpan. A TimeSpan object stores a span of time in hours and minutes 
+(for example,the time span between 5:00am and 7:45am is 2 hours, 45 minutes).
+*/
+
+// Do NOT change the class name
+
+class TimeSpan
+{
+  int hours,mins;
+  public TimeSpan(int hr,int min)
+  {
+    hours=hr;
+    mins=min;
+  }
+  public int getHours()
+  {
+    return hours;
+  }
+  public int getMinutes()
+  {
+    return mins;
+  }
+  public void add(int h,int m)
+  {
+    this.hours = h+hours;
+    this.mins = m+mins;
+  }
+  public void add(TimeSpan tp)
+  {
+    this.hours = hours+tp.hours;
+    this.mins = tp.mins+mins;
+    this.hours=hours+(mins/60);
+    this.mins=mins%60;
+  }
+  public double getTotalHours()
+  {
+    double a;
+    a = hours+(mins*(double)1/60);
+    return a;
+  }
+  public String toString()
+  {
+    String str = new String();
+    str = hours+" Hours, "+mins+" Minutes";
+    return str;
+  }
+
+}
