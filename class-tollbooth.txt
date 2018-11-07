@@ -1,0 +1,63 @@
+/*
+The main function should allow the user to press 'p' to count a paying car, and 'n' to count a nonpaying car. 
+Pushing the 'q' key should cause the program to print out the total cars and total cash and then exit.
+
+Sample Input
+p
+p
+p
+n
+p
+n
+p
+q
+
+Sample Output
+Total Cash : 250/-
+Total Cars : 7
+*/
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class TollBooth
+{
+  int number;
+  int amount;
+  public TollBooth()
+  {
+    number = 0;
+    amount = 0;
+  }
+  public void payingCar()
+  {
+    this.number++;
+    this.amount = amount + 50;
+  }
+  public void nopayCar()
+  {
+    this.number++;
+  }
+  public void display()
+  {
+    System.out.println("Total Cash : "+amount+"/-");
+    System.out.println("Total Cars : "+number);
+  }
+}
+class Main{
+    public static void main(String[] args)
+    {
+      TollBooth t = new TollBooth();
+      Scanner scan = new Scanner(System.in);
+      char c = scan.next().charAt(0);
+      while(c != 'q')
+      {
+        if(c=='p')
+          t.payingCar();
+        else if(c=='n')
+          t.nopayCar();
+        c = scan.next().charAt(0);
+      }
+      if(c=='q')
+        t.display();
+    }
+}
